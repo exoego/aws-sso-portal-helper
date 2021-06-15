@@ -2,7 +2,7 @@
   "name": "AWS SSO Portal Helper",
   "description": "AWS SSO Portal Helper",
   "manifest_version": 2,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage_url": "https://github.com/exoego/aws-sso-portal-helper",
 
   "content_scripts": [
