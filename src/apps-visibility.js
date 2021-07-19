@@ -8,9 +8,9 @@ try {
   // eslint-disable-next-line no-undef
   const Chrome = chrome
   StorageLocal = {
-    get: () => {
+    get: (keys) => {
       return new Promise((resolve, reject) => {
-        Chrome.storage.local.get(null, (items) => {
+        Chrome.storage.local.get(keys, (items) => {
           if (Chrome.runtime.lastError) {
             return reject(Chrome.runtime.lastError)
           }
@@ -18,9 +18,9 @@ try {
         })
       })
     },
-    set: (data) => {
+    set: (keyValues) => {
       return new Promise((resolve, reject) => {
-        Chrome.storage.local.set(data, (items) => {
+        Chrome.storage.local.set(keyValues, (items) => {
           if (Chrome.runtime.lastError) {
             return reject(Chrome.runtime.lastError)
           }
@@ -53,7 +53,7 @@ try {
   document.body.appendChild(style);
 
   (async () => {
-    const significantInstances = (await StorageLocal.get())?.significantInstances ?? {}
+    const significantInstances = (await StorageLocal.get(['significantInstances']))?.significantInstances ?? {}
     const intervalId = setInterval(() => {
       if (!document.querySelectorAll('portal-application').length) {
         // Retry until app found
