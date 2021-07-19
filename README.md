@@ -2,7 +2,7 @@
 
 ## Install
 
-TODO: Add link to Chrome WebStore
+[Chrome Web Store](https://chrome.google.com/webstore/detail/aws-sso-portal-helper/kjgadobblmmlbmmkchoiihcfojhhdkod)
 
 ## Develop
 
